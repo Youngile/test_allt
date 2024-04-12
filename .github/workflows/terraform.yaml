@@ -27,6 +27,10 @@ jobs:
               aws-access-key-id: ${{ secrets.TF_DEV_930606_AWS_ACCESS_KEY_ID }}
               aws-secret-access-key: ${{ secrets.TF_DEV_930606_AWS_SECRET_ACCESS_KEY }}
               aws-region: ${{ env.AWS_REGION }}
+
+          - name: Change to Terraform directory
+            run: cd dev_terraform
+            
           - name: Terraform Init
             run: terraform init
 
