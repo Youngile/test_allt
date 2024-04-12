@@ -17,7 +17,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        steps:
+    steps:
           - name: Checkout
             uses: actions/checkout@v3
 
