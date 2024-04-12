@@ -140,11 +140,11 @@ resource "aws_eip" "nat_eip2" {
 resource "aws_nat_gateway" "nat_gw_1" {
   allocation_id = aws_eip.nat_eip1.id
   subnet_id     = aws_subnet.pub_sub_1.id
-  depends_on    = [aws_internet_gateway.my_igw]
+  depends_on    = [aws_internet_gateway.my_igw, aws_vpc.my_vpc]
 }
 
 resource "aws_nat_gateway" "nat_gw_2" {
   allocation_id = aws_eip.nat_eip2.id
   subnet_id     = aws_subnet.pub_sub_2.id
-  depends_on    = [aws_internet_gateway.my_igw]
+  depends_on    = [aws_internet_gateway.my_igw, aws_vpc.my_vpc]
 }
